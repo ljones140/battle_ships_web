@@ -9,4 +9,5 @@ Feature: Starting the game
     Then I should see "What's your name?"
     When I fill in "playername" with "Name"
     And I press "submit"
-    Then I am on "Game"# with "Name"
+    Then I should see "Game start"
+    And I should see "playername"
