@@ -5,5 +5,8 @@ Feature: Starting the game
 
   Scenario: Registering
     Given I am on the homepage
-    When I follow "New Game"
+    When I press "New Game"
     Then I should see "What's your name?"
+    When I fill in "playername" with "Name"
+    And I press "submit"
+    Then I am on "Game"# with "Name"
