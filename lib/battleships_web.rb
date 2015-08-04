@@ -1,20 +1,26 @@
 require 'sinatra/base'
 
+
+
 class BattleshipsWeb < Sinatra::Base
+
+  attr_reader :playername
+
+  enable :sessions
 
   set :views, Proc.new { File.join(root, "..", "views") }
 
   get '/' do
-    'Hello BattleshipsWeb!'
     erb :index
   end
 
   get '/newgame' do
-    "New Game"
     erb :newgame
   end
 
   get '/game' do
+    session[:playername] = params[:playername]
+    @playername = session[:playername]
     erb :game
   end
 
