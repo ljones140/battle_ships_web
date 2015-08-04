@@ -10,4 +10,4 @@ Feature: Starting the game
     When I fill in "playername" with "Name"
     And I press "submit"
     Then I should see "Game start"
-    And I should see "playername"
+    And I page should have "Player 1"
